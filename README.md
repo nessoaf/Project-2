@@ -23,7 +23,7 @@ DnD/MTG Copmendium
 * 
 * 
 
-## wireframe/stagingidea
+## wireframe /staging ideas
 ![](/wireframe/Untitled.png)
 ![](/wireframe/pages.png)
 ![](/wireframe/mtgpage.png)
