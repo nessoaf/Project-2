@@ -11,16 +11,19 @@
         <nav class="navbar">
             <div class="leftnav">
                 <a href="" class="mtgnav">Magic the Gathering</a>
+                |
                 <a href="" class="dndnav">Dungeons and Dragons</a>    
             </div>
             <div class="rightnav">
-                <!-- <% if (currentUser) { %> -->
+                <% if (currentUser) { %>
                     <a href="/profile">Profile</a>
+                    |
                     <a href="/auth/logout">Logout</a>
-                    <!-- <% } else { %> -->
+                    <% } else { %>
                         <a href="/auth/register">Register</a>
+                        |
                         <a href="/auth/login">Login</a>
-                    <!-- <% } %> -->
+                    <% } %>
             </div>
         </nav>
     </header>
