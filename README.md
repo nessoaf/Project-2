@@ -18,7 +18,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * Make decks
 * Make characters in dnd
 * Add proper color/design to each api to correctly display the feeling of them
-* 
+* Focus cleaning the ui/navbars
 * 
 * 
 * 
@@ -33,17 +33,17 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * D6+:finish strech and finish design
 
 ## wireframe /staging ideas
-
+* Main Page
 ![](/Wireframe/Untitled.png)
-
+* General Page Layout
 ![](/Wireframe/pages.png)
-
+* MTG displaying page
 ![](/Wireframe/mtgpage.png)
-
+* DnD displaying page
 ![](/Wireframe/dndpage.png)
-
+* Login page 
 ![](/Wireframe/logreg.png)
-
+* Users fave page
 ![](/Wireframe/favpage.png)
 
 ## Issues

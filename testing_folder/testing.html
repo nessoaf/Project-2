@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="testing.css">
+    <title></title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="leftnav">
+                <a href="" class="mtgnav">Magic the Gathering</a>
+                <a href="" class="dndnav">Dungeons and Dragons</a>    
+            </div>
+            <div class="rightnav">
+                <!-- <% if (currentUser) { %> -->
+                    <a href="/profile">Profile</a>
+                    <a href="/auth/logout">Logout</a>
+                    <!-- <% } else { %> -->
+                        <a href="/auth/register">Register</a>
+                        <a href="/auth/login">Login</a>
+                    <!-- <% } %> -->
+            </div>
+        </nav>
+    </header>
+    <%- body %>
+</body>
+</html>
