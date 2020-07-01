@@ -33,17 +33,23 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * D6+:finish strech and finish design
 
 ## wireframe /staging ideas
-* Main Page
+# Main Page
+
 ![](/Wireframe/Untitled.png)
-* General Page Layout
+
+# General Page Layout
 ![](/Wireframe/pages.png)
-* MTG displaying page
+
+# MTG displaying page
 ![](/Wireframe/mtgpage.png)
-* DnD displaying page
+
+# DnD displaying page
 ![](/Wireframe/dndpage.png)
-* Login page 
+
+# Login page 
 ![](/Wireframe/logreg.png)
-* Users fave page
+
+# Users favorite page
 ![](/Wireframe/favpage.png)
 
 ## Issues
