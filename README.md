@@ -24,12 +24,12 @@ DnD/MTG Copmendium
 * 
 
 ## wireframe/stagingidea
-![](/wireframe/Untitled.png)
-![](/wireframe/pages.png)
-![](/wireframe/mtg page.png)
-![](/wireframe/dnd page.png)
-![](/wireframe/log reg.png)
-![](/wireframe/favpage.png)
+![](/Wireframe/Untitled.png)
+![](/Wireframe/pages.png)
+![](/Wireframe/mtg page.png)
+![](/Wireframe/dnd page.png)
+![](/Wireframe/log reg.png)
+![](/Wireframe/favpage.png)
 
 ## Issues
 *  
