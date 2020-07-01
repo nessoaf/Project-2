@@ -26,17 +26,17 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 
 ## wireframe /staging ideas
 
-![](/wireframe/Untitled.png)
+![](/Wireframe/Untitled.png)
 
-![](/wireframe/pages.png)
+![](/Wireframe/pages.png)
 
-![](/wireframe/mtgpage.png)
+![](/Wireframe/mtgpage.png)
 
-![](/wireframe/dndpage.png)
+![](/Wireframe/dndpage.png)
 
-![](/wireframe/logreg.png)
+![](/Wireframe/logreg.png)
 
-![](/wireframe/favpage.png)
+![](/Wireframe/favpage.png)
 
 ## Issues
 *  
