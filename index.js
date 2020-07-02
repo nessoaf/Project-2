@@ -1,22 +1,23 @@
 //Requires
-require('dotenv')
-const express = require('express')
-const axios = require('axios')
-const ejsLayouts = require('express-ejs-layouts')
-const app = express()
+require('dotenv').config();
+const express = require('express');
+const axios = require('axios'); 
+const ejsLayouts = require('express-ejs-layouts');
+const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
+app.use(require('morgan')('dev'));
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'))
-app.use(ejsLayouts)
+app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'))
 
 // GET main index of the site
 app.get('/', (req, res) => {
-    var mtgUrl = `https://api.magicthegathering.io/v1/cards`
+    var mtgURL = `https://api.magicthegathering.io/v1/cards`
     //api call
-    axios.get(mtg).then(apiResponse => {
+    axios.get(mtgURL).then(apiResponse => {
         var mtg = apiResponse.data.results;
         res.render('index', { mtg: mtg})
     })
