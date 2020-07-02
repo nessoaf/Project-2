@@ -58,3 +58,9 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * 
 * 
 * 
+
+## MTG 
+* Deck types
+* Deck relation to card/player
+*
+*
