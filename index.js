@@ -5,6 +5,7 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+const mtg = require('mtgsdk')
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
@@ -18,8 +19,13 @@ app.get('/', (req, res) => {
     var mtgURL = `https://api.magicthegathering.io/v1/cards`
     //api call
     axios.get(mtgURL).then(apiResponse => {
-        var mtg = apiResponse.data.results;
+        var mtg = apiResponse.data;
+        // res.send(mtg)
         res.render('index', { mtg: mtg})
+    }).catch(err => {
+        console.log("FIRE")
+        console.log(err)
+        res.send('error')
     })
 })
 

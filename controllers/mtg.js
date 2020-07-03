@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios'); // this is always needed wherever called
 const db = require('../models');
+const mtg = require('mtgsdk')
 
 
 //GET ROUTE - This pulls 'all(however much alphabetically)' and renders them on mtg index
@@ -32,10 +33,15 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:name', (req,res) =>{
-    var mtgURL = `https://api.magicthegathering.io/v1/cards/${req.params.name}`
-    axios.get(mtgURL).then(response => {
-        var mtg = response.data
+    mtg.card.where({name: req.query})
+    // console.log(req.params.name)
+.then(results => {
+    console.log(results)
         res.render('mtg/show', {mtg: mtg})
+    }).catch(err => {
+        console.log("FIRE")
+        console.log(err)
+        res.send('error')
     })
 })
 
