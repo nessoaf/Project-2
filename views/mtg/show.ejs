@@ -1,5 +1,44 @@
 <!-- this is the card show page -->
-<div class="container">
-    <h1 class="text-center cardname"><%= card.name %></h1>
+<div class="container show">
+    <div class="info">
+        <h1 class="text-center cardname"><%= card.card.name %></h1>
+        <img class="img" src="<%= card.card.imageUrl %>" alt="<%= card.card.name %>">
+    </div>
+    <div class="description">
+        <p>
+            Cost: <%= card.card.manaCost %>
+            <br>
+            Type: <%= card.card.types %>
+            <br>
+            Sub Type: <%= card.card.subtypes %>
+            <br>
+            Rarity: <%= card.card.rarity %>
+            <br>
+            Text: <%= card.card.text %>
+            <br>
+            Lore: <%= card.card.flavor %>
+            <br>
+            <% card.card.forEach(card => { %> 
+                <!-- Need to revise a forEach loop here -->
 
+            })
+            <%= card.card.legalities[0].format %>: <%= card.card.legalities[0].legality %>
+            <br>
+            <%= card.card.legalities[1].format %>: <%= card.card.legalities[1].legality %>
+            <br>
+            <%= card.card.legalities[2].format %>: <%= card.card.legalities[2].legality %>
+            <br>
+            <%= card.card.legalities[3].format %>: <%= card.card.legalities[3].legality %>
+            <br>
+            <%= card.card.legalities[4].format %>: <%= card.card.legalities[4].legality %>
+            <br>
+            <%= card.card.legalities[5].format %>: <%= card.card.legalities[5].legality %>
+            <br>
+            <%= card.card.legalities[6].format %>: <%= card.card.legalities[6].legality %>
+            <br>
+            <%= card.card.legalities[7].format %>: <%= card.card.legalities[7].legality %>
+            
+        </p>
+    </div>
+</div>
 </div>

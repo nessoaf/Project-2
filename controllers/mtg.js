@@ -32,12 +32,11 @@ router.post('/', (req, res) => {
     })
 })
 
-router.get('/:name', (req,res) =>{
-    mtg.card.where({name: req.query})
-    // console.log(req.params.name)
-.then(results => {
-    console.log(results)
-        res.render('mtg/show', {mtg: mtg})
+router.get('/:id', (req,res) => {
+    var mtgURL = `https://api.magicthegathering.io/v1/cards/${req.params.id}`
+    axios.get(mtgURL).then(response => { 
+        var card = response.data
+        res.render('mtg/show', {card: card}, console.log(response.data))
     }).catch(err => {
         console.log("FIRE")
         console.log(err)

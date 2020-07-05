@@ -68,3 +68,15 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 ## Routes
 * '/' displays the 'entire' collection
 * '/show' displays the single
+* lay out my routes
+* layout Schema 1st
+	* DB tables columns/tables
+		* User
+
+### Schema list
+* User - (Name, Email, Password)
+	* Decks
+* Decks
+	* cards(cards can be added to many decks)
+		* Lands(MAX 4)
+		* non lands(no max)
