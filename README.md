@@ -3,34 +3,34 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 
 
 ## Mvp:
-* [x]Basic view of listings
-* login 
-* [x]View items
-* Favorite cards
-* Display correct favorites on specific side of screen
-* Correctly design each page to show correct info for each api/   
-* Good search functionanilty
-* Allow users to swap between each 'App' page location with a good built in header bar
+* [X] Basic view of listings
+* []login 
+* [X] View items
+* []Favorite cards
+* []Display correct favorites on specific side of screen
+* []Correctly design each page to show correct info for each api/   
+* []Good search functionanilty
+* []Allow users to swap between each 'App' page location with a good built in header bar
 
 ## Stretch:
-* Possible comment addition for people to discuss builds
+* []Possible comment addition for people to discuss builds
 	*forum maybe?
-* Make decks
-* Make characters in dnd
-* Add proper color/design to each api to correctly display the feeling of them
-* Focus cleaning the ui/navbars
-* page number/next button for page navigation
+* []Make decks
+* []Make characters in dnd
+* []Add proper color/design to each api to correctly display the feeling of them
+* []Focus cleaning the ui/navbars
+* []page number/next button for page navigation
 * 
 * 
 * 
 
 ## Daily Goals
-* D1: Set up basic navigation.page settup
-* D2: Query items from apis and fully set up DB
-* D3: Add a log in feauture/oAuth if i can make my min up on this!!!
-* D4: Begin to adjust layout options and collect
-* D5: Begin stretch goals
-* D6+:finish strech and finish design
+* [x]D1: Set up basic navigation.page setup
+* [x]D2: Query items from apis and fully set up DB
+* []D3: Add a log in feauture/oAuth if i can make my min up on this!!!
+* []D4: Begin to adjust layout options and collect
+* []D5: Begin stretch goals
+* []D6+:finish strech and finish design
 
 ## wireframe /staging ideas
 
@@ -58,6 +58,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 *  api calls were being weird
 * nope I was not doing the correct thing!
 * show.ejs needs to a forEach to cycle through the legalities.format obj to check if there is 1-?? and display them(also need a nested one for legalities.legality) i'll probably ask someone for a help im not really able to see the answer im looking for...
+	* this was so stinking easy i feel bad for not remembering how to do it!!!!!!
 * 
 * 
 
