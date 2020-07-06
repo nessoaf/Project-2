@@ -36,7 +36,7 @@ router.get('/:id', (req,res) => {
     var mtgURL = `https://api.magicthegathering.io/v1/cards/${req.params.id}`
     axios.get(mtgURL).then(response => { 
         var card = response.data
-        res.render('mtg/show', {card: card}, console.log(response.data))
+        res.render('mtg/show', {card: card})
     }).catch(err => {
         console.log("FIRE")
         console.log(err)

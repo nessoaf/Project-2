@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const mtg = sequelize.define('mtg', {
+  const deck = sequelize.define('deck', {
     name: DataTypes.STRING,
-    cardid: DataTypes.STRING
+    type: DataTypes.STRING
   }, {});
-  mtg.associate = function(models) {
+  deck.associate = function(models) {
     // associations can be defined here
   };
-  return mtg;
+  return deck;
 };

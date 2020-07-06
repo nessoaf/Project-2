@@ -4,10 +4,11 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 
 ## Mvp:
 * [X] Basic view of listings
-* [] login 
+* [O] login 
+	* [O] use the one we did in class over google Oauth until later
 * [X] View items
-* [] Favorite cards
-* [] Display correct favorites on specific side of screen
+* [O] Favorite cards
+* [O] Display correct favorites on specific side of screen
 * [] Correctly design each page to show correct info for each api/   
 * [] Good search functionanilty
 * [] Allow users to swap between each 'App' page location with a good built in header bar
@@ -90,11 +91,15 @@ POST - creating a deck
 PUT - adding cards to said deck
 DELETE - removing cards from deck/deleteing decks
 
+# ERD
+* https://drive.google.com/file/d/1KumPp1C9y34PU0bAMB8uLfkzsIwM0owR/view?usp=sharing
+
 
 
 
 # Things to not forget
-https://api.magicthegathering.io/v1/cards?page=2 - how to change pages 
-in your ejs file that used for rendering you wantto add a button to change pages
-refactor routing '/:page'
-acts like aPOST submission to change pages(adding/subtracting 1,2,3 etc)
+* https://api.magicthegathering.io/v1/cards?page=2 - how to change pages 
+* in your ejs file that used for rendering you wantto add a button to change pages
+* refactor routing '/:page'
+* acts like aPOST submission to change pages(adding/subtracting 1,2,3 etc)
+* add a header tag to each page i want a different style and make a new style.css page! 

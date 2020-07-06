@@ -17,15 +17,17 @@
             Text: <%= card.card.text %>
             <br>
             Lore: <%= card.card.flavor %>
-            <br>
-            <% card.card.legalities.forEach(obj => { %> 
-                <!-- Need to revise a forEach loop here -->
-                <%= obj.legality %>: <%= obj.format %>
-                <br>
-            <% }) %>
-
-            
+            <br>    
         </p>
+        <h4>Add to:</h4>
+        <% card.card.legalities.forEach(obj => { %> 
+            <form method="POST" action="/deck">
+            <%= obj.format %>: <%= obj.legality %>
+                <input hidden type="text" name="<%= obj.format %>" value="<%= obj.format %>">
+                <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
+            </form>
+            <br>
+        <% }) %>
     </div>
 </div>
 </div>

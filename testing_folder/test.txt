@@ -1,4 +1,14 @@
 sequelize model:create --name mtg --attributes name:string,cardid:string
 
+
+
+
+
+
 sequelize model:create --name card --attributes name:string,type:string,land:boolean,imageUrl:string
+
+sequelize model:create --name cardsdecks --attributes cardId:integer,deckId:string
+
+sequelize model:create --name deck --attributes name:string,type:string
+
 sequelize model:create --name user --attributes name:string,email:string,password:string
