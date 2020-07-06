@@ -1,9 +1,12 @@
 <div class="container">
-
     <% mtg.cards.forEach(card => { %>
+        <% if (card.imageUrl) { %> <!-- thank you Pete  -->
+
         <div class="cardshow">
             <a href="/mtg/<%= card.id %>"><h3 class="cards"><%= card.name %></h3><img src="<%= card.imageUrl %>" alt="<%= card.name %>"></a>
         </div>
-        <% }) %>
+        <% }}) %>
         
     </div>
+
+    <form action="post"></form>

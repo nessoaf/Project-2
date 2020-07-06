@@ -18,25 +18,12 @@
             <br>
             Lore: <%= card.card.flavor %>
             <br>
-            <% card.card.forEach(card => { %> 
+            <% card.card.legalities.forEach(obj => { %> 
                 <!-- Need to revise a forEach loop here -->
+                <%= obj.legality %>: <%= obj.format %>
+                <br>
+            <% }) %>
 
-            })
-            <%= card.card.legalities[0].format %>: <%= card.card.legalities[0].legality %>
-            <br>
-            <%= card.card.legalities[1].format %>: <%= card.card.legalities[1].legality %>
-            <br>
-            <%= card.card.legalities[2].format %>: <%= card.card.legalities[2].legality %>
-            <br>
-            <%= card.card.legalities[3].format %>: <%= card.card.legalities[3].legality %>
-            <br>
-            <%= card.card.legalities[4].format %>: <%= card.card.legalities[4].legality %>
-            <br>
-            <%= card.card.legalities[5].format %>: <%= card.card.legalities[5].legality %>
-            <br>
-            <%= card.card.legalities[6].format %>: <%= card.card.legalities[6].legality %>
-            <br>
-            <%= card.card.legalities[7].format %>: <%= card.card.legalities[7].legality %>
             
         </p>
     </div>

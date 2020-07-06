@@ -14,9 +14,13 @@ app.use(express.static('public'))
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'))
 
+
+app.get('/', (req,res) => {
+    res.redirect('/page/1') //this will redicet to line 22
+})
 // GET main index of the site
-app.get('/', (req, res) => {
-    var mtgURL = `https://api.magicthegathering.io/v1/cards`
+app.get('/page/:id', (req, res) => { // : catches the 
+    var mtgURL = `https://api.magicthegathering.io/v1/cards?page=${req.params.id}` //req.params.`id` is req is an object params.id is asking for the obj defied as id to be substitued for this obj 
     //api call
     axios.get(mtgURL).then(apiResponse => {
         var mtg = apiResponse.data;

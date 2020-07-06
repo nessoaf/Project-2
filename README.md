@@ -19,7 +19,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * Make characters in dnd
 * Add proper color/design to each api to correctly display the feeling of them
 * Focus cleaning the ui/navbars
-* 
+* page number/next button for page navigation
 * 
 * 
 * 
@@ -33,6 +33,8 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * D6+:finish strech and finish design
 
 ## wireframe /staging ideas
+
+
 # Main Page
 
 ![](/Wireframe/Untitled.png)
@@ -53,9 +55,9 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 ![](/Wireframe/favpage.png)
 
 ## Issues
-*  
-* 
-* 
+*  api calls were being weird
+* nope I was not doing the correct thing!
+* show.ejs needs to a forEach to cycle through the legalities.format obj to check if there is 1-?? and display them(also need a nested one for legalities.legality) i'll probably ask someone for a help im not really able to see the answer im looking for...
 * 
 * 
 
@@ -78,5 +80,17 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 	* Decks
 * Decks
 	* cards(cards can be added to many decks)
-		* Lands(MAX 4)
-		* non lands(no max)
+		* Non Lands(MAX 4)
+		* Lands(no max)
+
+# RESTful charting
+
+
+
+
+
+# THIngs to not forget
+https://api.magicthegathering.io/v1/cards?page=2 - how to change pages 
+in your ejs file that used for rendering you wantto add a button to change pages
+refactor routing '/:page'
+acts like aPOST submission to change pages(adding/subtracting 1,2,3 etc)
