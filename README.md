@@ -25,8 +25,8 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * 
 
 ## Daily Goals
-* [x]D1: Set up basic navigation.page setup
-* [x]D2: Query items from apis and fully set up DB
+* [X]D1: Set up basic navigation.page setup
+* [X]D2: Query items from apis and fully set up DB
 * []D3: Add a log in feauture/oAuth if i can make my min up on this!!!
 * []D4: Begin to adjust layout options and collect
 * []D5: Begin stretch goals
