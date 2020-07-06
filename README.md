@@ -3,9 +3,9 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 
 
 ## Mvp:
-* Basic view of listings
+* [x]Basic view of listings
 * login 
-* View items
+* [x]View items
 * Favorite cards
 * Display correct favorites on specific side of screen
 * Correctly design each page to show correct info for each api/   
@@ -83,13 +83,16 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 		* Non Lands(MAX 4)
 		* Lands(no max)
 
-# RESTful charting
+# RESTful charting(simplified)
+GET - index of cards
+POST - creating a deck
+PUT - adding cards to said deck
+DELETE - removing cards from deck/deleteing decks
 
 
 
 
-
-# THIngs to not forget
+# Things to not forget
 https://api.magicthegathering.io/v1/cards?page=2 - how to change pages 
 in your ejs file that used for rendering you wantto add a button to change pages
 refactor routing '/:page'
