@@ -1,11 +1,15 @@
-<form action="/auth/login" method="POST">
+<form action="/auth/register" method="POST">
     <div class="form-group">
         <label for="authEmail">Email</label>
-        <input type="email" name="email" class="form-control" id="authEmail">
+        <input type="email" name="email" id="authEmail" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="authName">Name</label>
+        <input type="text" id="authName" class="form-control" name="name">
     </div>
     <div class="form-group">
         <label for="authPassword">Password</label>
-        <input type="password" name="password" id="authPassword" class="form-control">
+        <input type="password" id="authPassword" class="form-control" name="password">
     </div>
     <input type="submit" class="btn">
-    </form>
+    </form>=

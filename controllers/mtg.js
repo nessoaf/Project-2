@@ -19,9 +19,10 @@ router.get('/', (req, res) => {
 
 // POST ROUTE
 router.post('/', (req, res) => {
-    db.mtg.findOrCreate({
+    db.deck.findOrCreate({
         where: {
-            name: req.body.name
+            name: req.body.name,
+            type: req.body.type
         }
     }).then(() => {
         res.redirect('/mtg')

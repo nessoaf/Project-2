@@ -4,6 +4,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    height: 10vh;
 }
 .rightnav {
     justify-content: space-between
@@ -26,14 +27,8 @@ a:link {
     text-decoration: none;
 }
 
-a:visited {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-}
-
 a:hover {
-    color: Blue;
+    color: turquoise;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -56,4 +51,8 @@ a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profile {
+    text-align: center;
 }

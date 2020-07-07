@@ -26,6 +26,26 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 
+//create new instrance of class Sequelize Store
+const sessionStore = new SequelizeStore({
+    db: db.sequelize,
+    expiration: 1000 * 60 * 30
+})
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: true
+}))
+
+sessionStore.sync()
+
+//TODO: init and link flash messages and passport and session
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+
 app.use((req, res, next) => {
     res.locals.alerts = req.flash();
     res.locals.currentUser = req.user;
