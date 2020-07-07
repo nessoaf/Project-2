@@ -1,3 +1,5 @@
+<h1 class="profile">Create your very own decks!</h1>
+<p class="profile">Select the card you want to add to load and see which decks its allowed into!</p>
 <div class="container">
     <% mtg.cards.forEach(card => { %>
     <% if (card.imageUrl) { %>
@@ -5,7 +7,8 @@
 
     <div class="cardshow">
         <a href="/mtg/<%= card.id %>">
-            <h3 class="cards"><%= card.name %></h3><img src="<%= card.imageUrl %>" alt="<%= card.name %>"></a>
+            <h3 class="cards"><%= card.name %></h3><img src="<%= card.imageUrl %>" alt="<%= card.name %>">
+        </a>
     </div>
     <% }}) %>
 

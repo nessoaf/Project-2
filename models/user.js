@@ -45,6 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     user.associate = function(models) {
         // TODO: any user associations you want
+        models.user.hasMany(models.deck)
     }
 
     // validPassword definition to validate password at user login

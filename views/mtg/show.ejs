@@ -6,27 +6,25 @@
     </div>
     <div class="description">
         <p>
-            Cost: <%= card.card.manaCost %>
-            <br>
-            Type: <%= card.card.types %>
-            <br>
-            Sub Type: <%= card.card.subtypes %>
-            <br>
-            Rarity: <%= card.card.rarity %>
-            <br>
-            Text: <%= card.card.text %>
-            <br>
-            Lore: <%= card.card.flavor %>
-            <br>    
+        <h4>Cost: </h4><%= card.card.manaCost %><br>
+        <h4>Type: </h4><%= card.card.types %><br>
+        <h4>Sub Type: </h4><%= card.card.subtypes %><br>
+        <h4>Rarity: </h4><%= card.card.rarity %><br>
+        <h4>Card Text: </h4><%= card.card.text %><br>
+        <h4>Lore: </h4><%= card.card.flavor %><br>
         </p>
-        <h4>Add to:</h4>
-        <% card.card.legalities.forEach(obj => { %> 
-            <form method="POST" action="/deck">
-            <%= obj.format %>: <%= obj.legality %>
-                <input hidden type="text" name="<%= obj.format %>" value="<%= obj.format %>">
-                <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
-            </form>
-            <br>
+        <h4 class="deckadd">This card can be used is the following decks!</h4><br>
+        <% card.card.legalities.forEach(obj => { %>
+        <form method="POST" action="/mtg" class="deckadd">
+            <%= obj.format %>
+            <input hidden type="text" name="<%= obj.format %>" value="<%= obj.format %>">
+            <input hidden type="text" name="<%= card.card.name %>" value="<%= card.card.name %>">
+            <input hidden type="text" name="<%= card.card.types %>" value="<%= card.card.types %>">
+
+            <!-- <input type="text"> -->
+            <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
+        </form>
+        <br>
         <% }) %>
     </div>
 </div>

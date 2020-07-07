@@ -4,7 +4,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: 5vh;
 }
 .rightnav {
     justify-content: space-between
@@ -39,6 +39,7 @@ a:active {
     text-decoration: underline;
 }
 .description {
+    max-width: 50vh;
     border: black;
     box-shadow: 4px 4px 5px rgba(0,0,0,0.5),
             10px 10px 15px rgba(0,0,0,0.5),
@@ -54,5 +55,8 @@ a:active {
 }
 
 .profile {
+    text-align: center;
+}
+.deckadd {
     text-align: center;
 }
