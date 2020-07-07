@@ -4,14 +4,12 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 
 ## Mvp:
 * [X] Basic view of listings
-* [O] login 
-	* [O] use the one we did in class over google Oauth until later
+* [X] login 
+	* [X] use the one we did in class over google Oauth until later
 * [X] View items
 * [O] Favorite cards
-* [O] Display correct favorites on specific side of screen
 * [] Correctly design each page to show correct info for each api/   
 * [] Good search functionanilty
-* [] Allow users to swap between each 'App' page location with a good built in header bar
 
 ## Stretch:
 * [] Possible comment addition for people to discuss builds
@@ -28,7 +26,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 ## Daily Goals
 * [X] D1: Set up basic navigation.page setup
 * [X] D2: Query items from apis and fully set up DB
-* [] D3: Add a log in feauture/oAuth if i can make my mind up on this!!!
+* [X] D3: Add a log in feauture/oAuth if i can make my mind up on this!!!
 * [] D4: Begin to adjust layout options and collect
 * [] D5: Begin stretch goals
 * [] D6+:finish strech and finish design
