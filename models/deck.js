@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   deck.associate = function(models) {
     // associations can be defined here
+    models.deck.belongsToMany(models.card, {through: 'cardsdecks'})
+    
   };
   return deck;
 };
