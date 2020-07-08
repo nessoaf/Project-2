@@ -2,7 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const deck = sequelize.define('deck', {
     name: DataTypes.STRING,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    userId: DataTypes.INTEGER
   }, {});
   deck.associate = function(models) {
     // associations can be defined here

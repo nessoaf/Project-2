@@ -4,6 +4,7 @@ var router = express.Router();
 const axios = require('axios'); // this is always needed wherever called
 const db = require('../models');
 const mtg = require('mtgsdk')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 
 //GET ROUTE - This pulls 'all(however much alphabetically)' and renders them on mtg index
@@ -17,24 +18,41 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/test', (req,res) => {
+    db.deck.findOne({
+        include: [db.card]
+    }).then(deck => {
+        res.send(deck)
+    })
+})
+
 // POST ROUTE
-router.post('/', (req, res) => {
-    switch (name) {
-        case 'brawl':
+router.post('/', isLoggedIn, (req, res) => {
+    switch (req.body.name.toLowerCase()) {
+        case 'commander':
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.create({deckId: deck.id, cardId: card.id}).then(() => {
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
                 res.send('error')
             })
             break;
-        case 'commander':
+        case 'brawl':
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,

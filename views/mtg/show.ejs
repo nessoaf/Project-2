@@ -17,9 +17,10 @@
         <% card.card.legalities.forEach(obj => { %>
         <form method="POST" action="/mtg" class="deckadd">
             <%= obj.format %>
-            <input hidden type="text" name="<%= obj.format %>" value="<%= obj.format %>">
-            <input hidden type="text" name="<%= card.card.name %>" value="<%= card.card.name %>">
-            <input hidden type="text" name="<%= card.card.types %>" value="<%= card.card.types %>">
+            <input hidden type="text" name="name" value="<%= obj.format %>">
+            <input hidden type="text" name="cardName" value="<%= card.card.name %>">
+            <input hidden type="text" name="type" value="<%= card.card.types %>">
+            <input hidden type="text" name="imageUrl" value="<%= card.card.imageUrl %>">
 
             <!-- <input type="text"> -->
             <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>

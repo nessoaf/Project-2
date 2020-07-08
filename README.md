@@ -101,3 +101,18 @@ DELETE - removing cards from deck/deleteing decks
 * refactor routing '/:page'
 * acts like aPOST submission to change pages(adding/subtracting 1,2,3 etc)
 * add a header tag to each page i want a different style and make a new style.css page! 
+
+
+
+* need forms for everything
+	* each deck that is creatable
+	* need to send all info to add the card
+
+
+	Sarah thinking
+* add a field in the join table called amount
+* when created association it will default to one
+* instead of doing create we will do a findOrCreate()
+	* use the boolean (true or false) along with item
+		* if not created we will update association.amount++ incremeanting the amount from 1 to infinity
+		*
