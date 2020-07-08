@@ -1,32 +1,34 @@
 <!-- this is the card show page -->
-<div class="container show">
-    <div class="info">
-        <h1 class="text-center cardname"><%= card.card.name %></h1>
-        <img class="img" src="<%= card.card.imageUrl %>" alt="<%= card.card.name %>">
+<body class="showpage">
+    <div class="container show">
+        <div class="info">
+            <h1 class="text-center cardname"><%= card.card.name %></h1>
+            <img class="img" src="<%= card.card.imageUrl %>" alt="<%= card.card.name %>">
+        </div>
+        <div class="description">
+            <p>
+            <h4>Cost: </h4><%= card.card.manaCost %><br>
+            <h4>Type: </h4><%= card.card.types %><br>
+            <h4>Sub Type: </h4><%= card.card.subtypes %><br>
+            <h4>Rarity: </h4><%= card.card.rarity %><br>
+            <h4>Card Text: </h4><%= card.card.text %><br>
+            <h4>Lore: </h4><%= card.card.flavor %><br>
+            </p>
+            <h4 class="deckadd">This card can be used is the following decks!</h4><br>
+            <% card.card.legalities.forEach(obj => { %>
+            <form method="POST" action="/mtg" class="deckadd">
+                <%= obj.format %>
+                <input hidden type="text" name="name" value="<%= obj.format %>">
+                <input hidden type="text" name="cardName" value="<%= card.card.name %>">
+                <input hidden type="text" name="type" value="<%= card.card.types %>">
+                <input hidden type="text" name="imageUrl" value="<%= card.card.imageUrl %>">
+    
+                <!-- <input type="text"> -->
+                <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
+            </form>
+            <br>
+            <% }) %>
+        </div>
     </div>
-    <div class="description">
-        <p>
-        <h4>Cost: </h4><%= card.card.manaCost %><br>
-        <h4>Type: </h4><%= card.card.types %><br>
-        <h4>Sub Type: </h4><%= card.card.subtypes %><br>
-        <h4>Rarity: </h4><%= card.card.rarity %><br>
-        <h4>Card Text: </h4><%= card.card.text %><br>
-        <h4>Lore: </h4><%= card.card.flavor %><br>
-        </p>
-        <h4 class="deckadd">This card can be used is the following decks!</h4><br>
-        <% card.card.legalities.forEach(obj => { %>
-        <form method="POST" action="/mtg" class="deckadd">
-            <%= obj.format %>
-            <input hidden type="text" name="name" value="<%= obj.format %>">
-            <input hidden type="text" name="cardName" value="<%= card.card.name %>">
-            <input hidden type="text" name="type" value="<%= card.card.types %>">
-            <input hidden type="text" name="imageUrl" value="<%= card.card.imageUrl %>">
-
-            <!-- <input type="text"> -->
-            <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
-        </form>
-        <br>
-        <% }) %>
     </div>
-</div>
-</div>
+</body>

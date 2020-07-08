@@ -1,5 +1,6 @@
 * {
     margin: 0 auto;
+    font-family: 'Magic:the Gathering';
 }
 .navbar {
     display: flex;
@@ -22,7 +23,12 @@
 }
 
 a:link {
-    color: black;
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: grey;
     background-color: transparent;
     text-decoration: none;
 }
@@ -59,4 +65,11 @@ a:active {
 }
 .deckadd {
     text-align: center;
+}
+.PN {
+    text-align: center;
+}
+body {
+    color: white;
+    background-image: url(/img/showbackground.jpg);
 }

@@ -18,13 +18,13 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/test', (req,res) => {
-    db.deck.findOne({
-        include: [db.card]
-    }).then(deck => {
-        res.send(deck)
-    })
-})
+// router.get('/test', (req, res) => {
+//     db.deck.findByPk({
+//         include: [db.card]
+//     }).then(deck => {
+//         res.send(deck)
+//     })
+// })
 
 // POST ROUTE
 router.post('/', isLoggedIn, (req, res) => {
@@ -42,7 +42,18 @@ router.post('/', isLoggedIn, (req, res) => {
                     },
                     defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
                 }).then(([card, create]) => {
-                    db.cardsdecks.create({deckId: deck.id, cardId: card.id}).then(() => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
                         res.redirect('/profile')
                     })
                 })
@@ -56,10 +67,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -70,10 +101,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -84,10 +135,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -98,10 +169,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -112,10 +203,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -126,10 +237,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -140,10 +271,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -154,10 +305,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -168,10 +339,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -182,10 +373,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)
@@ -196,10 +407,30 @@ router.post('/', isLoggedIn, (req, res) => {
             db.deck.findOrCreate({
                 where: {
                     name: req.body.name,
-                    type: req.body.type
+                    userId: req.user.id//this is to check for user
                 }
-            }).then(() => {
-                res.redirect('/mtg')
+            }).then(([deck, created]) => { //you have access to the deck from above and are able to now add the card to said deck
+                db.card.findOrCreate({
+                    where: {
+                        name: req.body.cardName, //see shw ejs input for clarification 
+                    },
+                    defaults: { type: req.body.type, imageUrl: req.body.imageUrl }
+                }).then(([card, create]) => {
+                    db.cardsdecks.findOrCreate({
+                        where: {
+                            deckId: deck.id,
+                            cardId: card.id,
+                        }, defaults: {
+                            amount: 1
+                        }
+                    }).then(([association, created]) => {
+                        if (!created) {
+                            association.amount++
+                            association.save() //update stuff
+                        }
+                        res.redirect('/profile')
+                    })
+                })
             }).catch(err => {
                 console.log("FIRE")
                 console.log(err)

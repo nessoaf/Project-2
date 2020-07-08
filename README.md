@@ -27,7 +27,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * [X] D1: Set up basic navigation.page setup
 * [X] D2: Query items from apis and fully set up DB
 * [X] D3: Add a log in feauture/oAuth if i can make my mind up on this!!!
-* [] D4: Begin to adjust layout options and collect
+* [X] D4: Begin to adjust layout options and collect
 * [] D5: Begin stretch goals
 * [] D6+:finish strech and finish design
 
@@ -58,7 +58,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * nope I was not doing the correct thing!
 * show.ejs needs to a forEach to cycle through the legalities.format obj to check if there is 1-?? and display them(also need a nested one for legalities.legality) i'll probably ask someone for a help im not really able to see the answer im looking for...
 	* this was so stinking easy i feel bad for not remembering how to do it!!!!!!
-* 
+* This freaking switchstatement on how and where to add an card needing to be a nestednested nest of shenanigans
 * 
 
 ## MTG 
@@ -115,4 +115,8 @@ DELETE - removing cards from deck/deleteing decks
 * instead of doing create we will do a findOrCreate()
 	* use the boolean (true or false) along with item
 		* if not created we will update association.amount++ incremeanting the amount from 1 to infinity
-		*
+		*card.cardsdeck
+
+		whenitterating thoruhgt the cards of a deck 
+		check the # of that card in the deck
+			via <%= card.cardsdecks.amount %>X

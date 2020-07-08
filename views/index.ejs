@@ -1,10 +1,24 @@
 <h1 class="profile">Create your very own decks!</h1>
 <p class="profile">Select the card you want to add to load and see which decks its allowed into!</p>
+<div class="PN">
+    <h5>Page:</h5>
+    <a href="/page/1">1</a>
+    <a href="/page/2">2</a>
+    <a href="/page/3">3</a>
+    <a href="/page/4">4</a>
+    <a href="/page/5">5</a>
+    <a href="/page/6">6</a>
+    <a href="/page/7">7</a>
+    <a href="/page/8">8</a>
+    <a href="/page/9">9</a>
+    <a href="/page/10">10</a>
+    <a href="/page/11">11</a>
+    <a href="/page/12">12</a>
+</div>
 <div class="container">
     <% mtg.cards.forEach(card => { %>
     <% if (card.imageUrl) { %>
     <!-- thank you Pete  -->
-
     <div class="cardshow">
         <a href="/mtg/<%= card.id %>">
             <h3 class="cards"><%= card.name %></h3><img src="<%= card.imageUrl %>" alt="<%= card.name %>">
@@ -15,3 +29,18 @@
 </div>
 
 <form action="post"></form>
+<div class="PN">
+    <h5>Page:</h5>
+    <a href="/page/1">1</a>
+    <a href="/page/2">2</a>
+    <a href="/page/3">3</a>
+    <a href="/page/4">4</a>
+    <a href="/page/5">5</a>
+    <a href="/page/6">6</a>
+    <a href="/page/7">7</a>
+    <a href="/page/8">8</a>
+    <a href="/page/9">9</a>
+    <a href="/page/10">10</a>
+    <a href="/page/11">11</a>
+    <a href="/page/12">12</a>
+</div>
