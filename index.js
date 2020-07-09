@@ -1,7 +1,7 @@
 //Requires
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios'); 
+const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,6 +14,9 @@ const db = require('./models')
 const isLoggedIn = require('./middleware/isLoggedIn')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
+const methodOverride = require('method-override')
+
+app.use(methodOverride('_method'))
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -53,13 +56,40 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/', (req,res) => {
-    res.redirect('/page/1') //this will redicet to line 22
+app.get('/', (req, res) => {
+    res.redirect('/page/1') //this will redicet to line 93
+})
+//profile
+app.get('/profile', isLoggedIn, (req, res) => {
+    db.deck.findAll()
+        .then((deck => {
+            res.render('profile', { deck: deck })
+        })
+        ).catch(err => {
+            console.log("FIRE")
+            console.log(err)
+            res.send('error')
+        })
+})
+//display card info from the deck selected area
+app.get('/profile/:deck', isLoggedIn, (req, res) => {
+    db.deck.findOne({
+        where: {
+            name: req.params.deck
+        },
+        include: [db.card]
+    }).then((deck) => {
+        db.cardsdecks.findAll({
+            where: {
+                deckId: deck.id
+            }
+        }).then(cardsdecks => {
+            console.log(deck.cards[0].cards)
+            res.render('profile/deck', { deck: deck, card: deck.cards, cardsdecks: cardsdecks })
+        })
+    })
 })
 
-app.get('/profile', isLoggedIn, (req, res) => { 
-    res.render('profile') 
-})
 
 
 // GET main index of the site
@@ -69,7 +99,7 @@ app.get('/page/:id', (req, res) => { // : catches the
     axios.get(mtgURL).then(apiResponse => {
         var mtg = apiResponse.data;
         // res.send(mtg)
-        res.render('index', { mtg: mtg})
+        res.render('index', { mtg: mtg })
     }).catch(err => {
         console.log("FIRE")
         console.log(err)
@@ -79,7 +109,7 @@ app.get('/page/:id', (req, res) => { // : catches the
 
 //importer all routes from the MTG controllers
 app.use('/mtg', require('./controllers/mtg'))
-// include wuht controller
+// include auth controller
 app.use('/auth', require('./controllers/auth'))
 
 var server = app.listen(port, console.log('Here i am! 😂🤣'))

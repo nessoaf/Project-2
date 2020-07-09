@@ -445,7 +445,26 @@ router.get('/:id', (req, res) => {
     var mtgURL = `https://api.magicthegathering.io/v1/cards/${req.params.id}`
     axios.get(mtgURL).then(response => {
         var card = response.data
-        res.render('mtg/show', { card: card })
+        var color = response.data.card.colors[0]
+        let backcolor
+        switch (color) {
+            case 'Green':
+                backcolor = "url(/img/green.png)"
+                break;
+            case 'Blue':
+                backcolor = "url(/img/blue.png)"
+                break;
+            case 'White':
+                backcolor = "url(/img/white.png)"
+                break;
+            case 'Black':
+                backcolor = "url(/img/black.png)"
+                break;
+            case 'Red':
+                backcolor = "url(/img/red.png)"
+        }
+        console.log(backcolor)
+        res.render('mtg/show', { card: card, backcolor })
     }).catch(err => {
         console.log("FIRE")
         console.log(err)
@@ -453,5 +472,23 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//delete cards
+router.delete('/delete/:id', (req, res) => {
+    db.cardsdecks.findOne({
+        where: {
+            cardId: req.params.id
+        }
+    }).then(card => {
+        if(card.amount > 1) {
+            card.update(
+            { amount: card.amount - 1 })
+        } else {card.destroy()}
+        res.redirect('/profile')
+    }).catch(err => {
+        console.log("FIRE")
+        console.log(err)
+        res.send('error')
+    })
+})
 
 module.exports = router 

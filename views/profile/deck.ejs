@@ -1,0 +1,15 @@
+<h1 class="profile"><%= deck.name %></h1><br>
+<div class="container">
+    <% card.forEach((card, cardsdecks) => { %>
+        <div class="cardshow">
+            <a href="/mtg/<%= card.id %>">
+                <h3><%= card.name %> <br> Number of Cards:<%= card.cardsdecks.amount %></h3>
+                <img src="<%= card.imageUrl %>" alt="<%= card.name %>">
+                <form action="/mtg/delete/<%= card.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="delete"></form>
+            </a>
+        </div>
+    <% }) %>
+
+    <!-- //decrease the amount -->
+</div>

@@ -7,18 +7,18 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * [X] login 
 	* [X] use the one we did in class over google Oauth until later
 * [X] View items
-* [O] Favorite cards
-* [] Correctly design each page to show correct info for each api/   
-* [] Good search functionanilty
+* [X] Favorite cards
+* [X] Correctly design each page to show correct info for each api/   
 
 ## Stretch:
 * [] Possible comment addition for people to discuss builds
 	*forum maybe?
-* [] Make decks
+* [X] Make decks
 * [] Make characters in dnd
-* [] Add proper color/design to each api to correctly display the feeling of them
+* [X] Add proper color/design to each api to correctly display the feeling of them
 * [] Focus cleaning the ui/navbars
-* [] page number/next button for page navigation
+* [X] page number/next button for page navigation
+* [] Good search functionanilty
 * 
 * 
 * 
@@ -115,4 +115,4 @@ DELETE - removing cards from deck/deleteing decks
 		check the # of that card in the deck
 			via <%= card.cardsdecks.amount %>X(number)
 
-* attempt to fix ejs dom amnipulation
+* attempt to fix ejs dom manipulation

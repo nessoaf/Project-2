@@ -7,6 +7,7 @@
     justify-content: space-between;
     height: 5vh;
     font-size: large;
+    background: rgba(241, 140, 39,0.75);
 }
 .rightnav {
     justify-content: space-between
@@ -55,6 +56,7 @@ a:active {
     box-shadow: 4px 4px 5px rgba(0,0,0,0.5),
             10px 10px 15px rgba(0,0,0,0.5),
             -1px -1px 30px rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.5)
 }
 .show {
     flex-direction: column;
@@ -87,4 +89,12 @@ h1 {
 
 p {
     font-size: larger;
+}
+.showpage {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.cardname {
+    background: rgba(0,0,0,0.5);
 }

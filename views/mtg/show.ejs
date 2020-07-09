@@ -1,6 +1,6 @@
 <!-- this is the card show page -->
 
-<body class="showpage" id="showpage">
+<body class="showpage" id="showpage" style="background-image: <%= backcolor %>;">
     <div class="container show">
         <div class="info">
             <h1 class="text-center cardname"><%= card.card.name %></h1>
@@ -8,6 +8,7 @@
         </div>
         <div class="description">
             <p>
+                <p hidden id="cardColor"> <%= card.card.colors[0] %></p>
             <h4>Cost: </h4><%= card.card.manaCost %><br>
             <h4>Type: </h4><%= card.card.types %><br>
             <h4>Sub Type: </h4><%= card.card.subtypes %><br>
@@ -33,22 +34,3 @@
     </div>
     </div>
 </body>
-
-
-<% switch(card.card.colors[0]) { %>
-<% case green: %>
-<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
-<% break; %>
-<% case blue: %>
-<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
-<% break; %>
-<% case white: %>
-<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
-<% break; %>
-<% case black: %>
-<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
-<% break; %>
-<% case red: %>
-<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
-<% break; %>
-<% } %>
