@@ -60,6 +60,8 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 	* this was so stinking easy i feel bad for not remembering how to do it!!!!!!
 * This freaking switchstatement on how and where to add an card needing to be a nestednested nest of shenanigans
 * 
+* attempt to fix ejs dom amnipulation
+
 
 ## MTG 
 * Deck types
@@ -109,14 +111,8 @@ DELETE - removing cards from deck/deleteing decks
 	* need to send all info to add the card
 
 
-	Sarah thinking
-* add a field in the join table called amount
-* when created association it will default to one
-* instead of doing create we will do a findOrCreate()
-	* use the boolean (true or false) along with item
-		* if not created we will update association.amount++ incremeanting the amount from 1 to infinity
-		*card.cardsdeck
-
 		whenitterating thoruhgt the cards of a deck 
 		check the # of that card in the deck
-			via <%= card.cardsdecks.amount %>X
+			via <%= card.cardsdecks.amount %>X(number)
+
+* attempt to fix ejs dom amnipulation

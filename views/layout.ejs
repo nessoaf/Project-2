@@ -9,10 +9,14 @@
     <style>
         @font-face {
             font-family: 'Magic';
-            src:  url('/fonts/MAGIC.TTF');
+            src: url('/fonts/MAGIC.TTF');
         }
-    *{font-family: 'Magic';} 
-    /* THANK YOU NICK */
+
+        * {
+            font-family: 'Magic';
+        }
+
+        /* THANK YOU NICK */
     </style>
     <title>MTG</title>
 </head>
@@ -30,11 +34,12 @@
             </div>
             <div class="rightnav">
                 <% if (currentUser) { %>
-                <a href="/auth/logout">Logout</a>
-                <a href="/profile">Profile</a>
+                |<a href="/profile">Profile</a>|
+                <a href="/auth/logout">Logout</a>|
                 <% } else { %>
-                <a href="/auth/register">Register</a>
-                <a href="/auth/login">Login</a>
+                |<a href="/auth/register">Register to Make an account!</a>
+                |or|
+                <a href="/auth/login">Login</a>|
                 <% } %>
             </div>
         </nav>

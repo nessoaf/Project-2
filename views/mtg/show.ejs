@@ -1,5 +1,6 @@
 <!-- this is the card show page -->
-<body class="showpage">
+
+<body class="showpage" id="showpage">
     <div class="container show">
         <div class="info">
             <h1 class="text-center cardname"><%= card.card.name %></h1>
@@ -22,7 +23,7 @@
                 <input hidden type="text" name="cardName" value="<%= card.card.name %>">
                 <input hidden type="text" name="type" value="<%= card.card.types %>">
                 <input hidden type="text" name="imageUrl" value="<%= card.card.imageUrl %>">
-    
+
                 <!-- <input type="text"> -->
                 <button class="btn btn-primary" type="submit">Add to <%= obj.format %> deck!</button>
             </form>
@@ -32,3 +33,22 @@
     </div>
     </div>
 </body>
+
+
+<% switch(card.card.colors[0]) { %>
+<% case green: %>
+<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
+<% break; %>
+<% case blue: %>
+<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
+<% break; %>
+<% case white: %>
+<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
+<% break; %>
+<% case black: %>
+<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
+<% break; %>
+<% case red: %>
+<% document.getElementsById('showpage').backgroundImage = "url(../public/img/green.png" %>
+<% break; %>
+<% } %>

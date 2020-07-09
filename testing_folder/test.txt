@@ -13,3 +13,9 @@ sequelize model:create --name deck --attributes name:string,type:string
 
 sequelize model:create --name user --attributes name:string,email:string,password:string
 sequelize db:migrate
+
+
+
+
+
+<% let cardColor = %> <%= card.card.colors[0] %> <%
