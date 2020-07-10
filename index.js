@@ -127,6 +127,6 @@ app.use('/auth', require('./controllers/auth'))
 
 
 
-var server = app.listen(port, console.log('Here i am! 😂🤣'))
+var server = app.listen(port, console.log('Here i am!'))
 
 module.exports = server
