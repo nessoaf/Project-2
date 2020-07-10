@@ -20,7 +20,7 @@
 .cardshow {
     display: flex;
     margin: 4px;
-    flex: 0 1 calc(10% - 1px);
+    flex: 0 1 calc(15% - 1px);
     text-align: center;
 }
 a {
@@ -69,18 +69,22 @@ a:active {
 
 .profile {
     text-align: center;
+    background: rgba(0,0,0,0.5);
 }
 .deckadd {
     text-align: center;
 }
 .PN {
     text-align: center;
+    background: rgba(0,0,0,0.5);
 }
 body {
     color: white;
-    background-image: url(/img/showbackground.jpg);
+    background-image: url(/img/MTGICON.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
 }
 h1 {
     font-size: 75px;

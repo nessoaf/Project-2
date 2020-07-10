@@ -90,6 +90,19 @@ app.get('/profile/:deck', isLoggedIn, (req, res) => {
     })
 })
 
+//search bar
+app.get('/page/:name', (req, res) => {
+    var mtgURL = `https://api.magicthegathering.io/v1/cards?name=${req.params.name}`
+    axios.get(mtgURL).then(apiResponse => {
+        var mtg = apiResponse.data;
+        // res.send(mtg)
+        res.redirect('index', { mtg: mtg })
+    }).catch(err => {
+        console.log("FIRE")
+        console.log(err)
+        res.send('error')
+    })
+})
 
 
 // GET main index of the site
@@ -106,6 +119,7 @@ app.get('/page/:id', (req, res) => { // : catches the
         res.send('error')
     })
 })
+
 
 //importer all routes from the MTG controllers
 app.use('/mtg', require('./controllers/mtg'))
