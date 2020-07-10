@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/fonts/MAGIC.TTF">
     <style>
         @font-face {
             font-family: 'Magic';
             src: url('/fonts/MAGIC.TTF');
         }
-
+        
         * {
             font-family: 'Magic';
         }
-
         /* THANK YOU NICK */
     </style>
     <title>MTG</title>
@@ -25,22 +24,20 @@
     <header>
         <nav class="navbar">
             <div class="leftnav">
-                |<a href="/" class="mtgnav">Magic the Gathering</a>
-                |
+                |<a href="/" class="mtgnav">Magic the Gathering</a> |
                 <!-- <a href="" class="dndnav">Dungeons and Dragons</a>|     -->
             </div>
             <div class="centerdiv">
-                <form method="GET" action="/search"> <input type="search" name="name"> <input type="submit" > </form>
+                <form method="GET" action="/search"> <input type="search" name="name" placeholder="Seach" class="search"> <input type="submit" placeholder="Find Card"> </form>
             </div>
             <div class="rightnav">
                 <% if (currentUser) { %>
-                |<a href="/profile">Profile</a>|
-                <a href="/auth/logout">Logout</a>|
-                <% } else { %>
-                |<a href="/auth/register">Register to Make an account!</a>
-                |or|
-                <a href="/auth/login">Login</a>|
-                <% } %>
+                    |<a href="/profile">Profile</a>|
+                    <a href="/auth/logout">Logout</a>|
+                    <% } else { %>
+                        |<a href="/auth/register">Register to Make an account!</a> |or|
+                        <a href="/auth/login">Login</a>|
+                        <% } %>
             </div>
         </nav>
     </header>

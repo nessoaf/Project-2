@@ -24,7 +24,7 @@ app.use(express.static('public'))
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'))
 app.use(helmet())
-//TODO: init and link flash messages and passport and session
+    //TODO: init and link flash messages and passport and session
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
@@ -57,21 +57,20 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.redirect('/page/1') //this will redicet to line 93
-})
-//profile
+        res.redirect('/page/1') //this will redicet to line 93
+    })
+    //profile
 app.get('/profile', isLoggedIn, (req, res) => {
-    db.deck.findAll()
-        .then((deck => {
-            res.render('profile', { deck: deck })
-        })
-        ).catch(err => {
-            console.log("FIRE")
-            console.log(err)
-            res.send('error')
-        })
-})
-//display card info from the deck selected area
+        db.deck.findAll()
+            .then((deck => {
+                res.render('profile', { deck: deck })
+            })).catch(err => {
+                console.log("FIRE")
+                console.log(err)
+                res.send('error')
+            })
+    })
+    //display card info from the deck selected area
 app.get('/profile/:deck', isLoggedIn, (req, res) => {
     db.deck.findOne({
         where: {
@@ -95,7 +94,7 @@ app.get('/profile/:deck', isLoggedIn, (req, res) => {
 // GET main index of the site
 app.get('/page/:id', (req, res) => { // : catches the 
     var mtgURL = `https://api.magicthegathering.io/v1/cards?page=${req.params.id}` //req.params.`id` is req is an object params.id is asking for the obj defied as id to be substitued for this obj 
-    //api call
+        //api call
     axios.get(mtgURL).then(apiResponse => {
         var mtg = apiResponse.data;
         // res.send(mtg)
@@ -110,21 +109,23 @@ app.get('/page/:id', (req, res) => { // : catches the
 
 //search bar
 app.get('/search', (req, res) => {
-    var mtgURL = `https://api.magicthegathering.io/v1/cards?name=${req.query.name}`
-    axios.get(mtgURL).then(apiResponse => {
-        var mtg = apiResponse.data;
-        // res.send(mtg)
-        res.render('index', { mtg: mtg })
-    }).catch(err => {
-        console.log("FIRE")
-        console.log(err)
-        res.send('error')
+        var mtgURL = `https://api.magicthegathering.io/v1/cards?name=${req.query.name}`
+        axios.get(mtgURL).then(apiResponse => {
+            var mtg = apiResponse.data;
+            // res.send(mtg)
+            res.render('index', { mtg: mtg })
+        }).catch(err => {
+            console.log("FIRE")
+            console.log(err)
+            res.send('error')
+        })
     })
-})
-//importer all routes from the MTG controllers
+    //importer all routes from the MTG controllers
 app.use('/mtg', require('./controllers/mtg'))
-// include auth controller
+    // include auth controller
 app.use('/auth', require('./controllers/auth'))
+
+
 
 var server = app.listen(port, console.log('Here i am! 😂🤣'))
 

@@ -1,15 +1,17 @@
-<form action="/auth/register" method="POST">
-    <div class="form-group">
-        <label for="authEmail">Email</label>
-        <input type="email" name="email" id="authEmail" class="form-control">
+<form action="/auth/register" method="POST" class="auth">
+    <h2>Hello! Please let me get to know you!</h2>
+    <h3>If you already have an account, please login!</h3>
+    <div class="form-group authpage">
+        <label for="authEmail"><h4>Email</h4></label> <br>
+        <input type="email" name="email" id="authEmail" class="form-control" placeholder="example@example.com">
     </div>
-    <div class="form-group">
-        <label for="authName">Name</label>
-        <input type="text" id="authName" class="form-control" name="name">
+    <div class="form-group authpage">
+        <label for="authName">Name</label> <br>
+        <input type="text" id="authName" class="form-control" name="name" placeholder="Jace, The Mind Bender">
     </div>
-    <div class="form-group">
-        <label for="authPassword">Password</label>
-        <input type="password" id="authPassword" class="form-control" name="password">
+    <div class="form-group authpage">
+        <label for="authPassword">Password</label> <br>
+        <input type="password" id="authPassword" class="form-control" name="password" placeholder="SUPER secret pass">
     </div>
     <input type="submit" class="btn">
-    </form>=
+</form>

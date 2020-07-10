@@ -1,3 +1,7 @@
+$background-color: #2A2E37;
+$search-bg-color: #242628;
+$icon-color: #00FEDE;
+$transition: all .5s ease;
 * {
     margin: 0 auto;
     font-family: 'Magic:the Gathering';
@@ -137,4 +141,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.search {
+    height: 40px;
+    width: 150px;
 }

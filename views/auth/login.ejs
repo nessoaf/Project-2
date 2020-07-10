@@ -1,11 +1,13 @@
-<form action="/auth/login" method="POST">
-    <div class="form-group">
-        <label for="authEmail">Email</label>
+<form action="/auth/login" method="POST" class="auth">
+    <h2>Welcome, back!</h2>
+    <h3>If you don't have an account please make one!</h3>
+    <div class="form-group authpage">
+        <label for="authEmail">Email</label> <br>
         <input type="email" name="email" class="form-control" id="authEmail">
     </div>
-    <div class="form-group">
-        <label for="authPassword">Password</label>
+    <div class="form-group authpage">
+        <label for="authPassword">Password</label> <br>
         <input type="password" name="password" id="authPassword" class="form-control">
     </div>
     <input type="submit" class="btn">
-    </form>
+</form>
