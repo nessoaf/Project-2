@@ -16,7 +16,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * [X] Make decks
 * [] Make characters in dnd
 * [X] Add proper color/design to each api to correctly display the feeling of them
-* [] Focus cleaning the ui/navbars
+* [X] Focus cleaning the ui/navbars
 * [X] page number/next button for page navigation
 * [] Good search functionanilty
 * 
@@ -28,7 +28,7 @@ A DnD Compendium/MTG Card search (to be expanded) That allows a user to find cre
 * [X] D2: Query items from apis and fully set up DB
 * [X] D3: Add a log in feauture/oAuth if i can make my mind up on this!!!
 * [X] D4: Begin to adjust layout options and collect
-* [] D5: Begin stretch goals
+* [X] D5: Begin stretch goals
 * [] D6+:finish strech and finish design
 
 ## wireframe /staging ideas
@@ -116,3 +116,14 @@ DELETE - removing cards from deck/deleteing decks
 			via <%= card.cardsdecks.amount %>X(number)
 
 * attempt to fix ejs dom manipulation
+
+
+# Thanks:
+### Honest to god If you guys weren't ther to help me this would NEVER have been this successful
+* Nick (helped me non-stop)
+* Milcah (absolute champ that dealt mith my scatterbrain)
+* Sarah (you da best)
+* Pete (basic function for routing - that i forgot multiple times later)
+* Yosh (for ALL of the explinations i needed and for all of your help)
+
+#### THank you!
