@@ -21,7 +21,7 @@ https://nesso-mtg.herokuapp.com/
 * [X] Add proper color/design to each api to correctly display the feeling of them
 * [X] Focus cleaning the ui/navbars
 * [X] page number/next button for page navigation
-* [] Good search functionanilty
+* [X] Good search functionanilty
 * 
 * 
 * 
@@ -119,6 +119,11 @@ DELETE - removing cards from deck/deleteing decks
 			via <%= card.cardsdecks.amount %>X(number)
 
 * attempt to fix ejs dom manipulation
+
+## Images used - 
+Main background was a free wallpaper: https://www.pixelstalk.net/free-desktop-mtg-wallpapers/
+
+All indevidual element pictures are from: ProtonZero who designes them for the mtg wiki
 
 
 # Thanks:
