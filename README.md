@@ -1,6 +1,9 @@
 DnD/MTG Copmendium
 A DnD Compendium/MTG Card search (to be expanded) That allows a user to find creatures/races/cards and diplay info on them also allowing users to make an account to save all items they like to their profile and allows them to retreat inot the users profile to quick find an item
 
+# Website local
+https://nesso-mtg.herokuapp.com/
+
 
 ## Mvp:
 * [X] Basic view of listings
