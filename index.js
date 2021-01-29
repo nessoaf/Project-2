@@ -112,6 +112,8 @@ app.get('/search', (req, res) => {
         var mtgURL = `https://api.magicthegathering.io/v1/cards?name=${req.query.name}`
         axios.get(mtgURL).then(apiResponse => {
             var mtg = apiResponse.data;
+            console.log(`hit me here
+            `)
             // res.send(mtg)
             res.render('index', { mtg: mtg })
         }).catch(err => {

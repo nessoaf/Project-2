@@ -1,0 +1,1 @@
+npm i axios bcrypt connect-flash connect-session-sequelize dotenv ejs express express-ejs-layouts express-session flash helmet method-override morgan mtgsdk passport passport-local pg sequelize
